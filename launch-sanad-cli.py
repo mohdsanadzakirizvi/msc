@@ -34,26 +34,22 @@ def main():
     if is_completed is True:
         # "sleep $((RANDOM % 300 + 300)) && " \
         base_args = "apt -y update && apt -y upgrade && " \
-        # general Linux pkgs
         "apt-get -y install git-lfs unzip psmisc wget git sudo python3 python-is-python3 pip bc htop nano nodejs npm curl && " \
         "npm install elasticdump -g && " \
         "git lfs install && " \
         "pip install -U pip && " \
-        # ircot pkgs
         "git clone https://github.com/StonyBrookNLP/ircot.git && " \
         "cd ircot && " \
         "pip install --root-user-action=ignore -U -r requirements.txt && " \
         "pip install --root-user-action=ignore -U protobuf && " \
         "pip install --root-user-action=ignore -U auto-gptq optimum autoawq && " \
         "pip install datasets && " \
-        # ircot data download
         "wget -O elasticsearch_data.zip https://huggingface.co/datasets/goldilox/ircot_downloaded_datasets/resolve/main/elasticsearch_data.zip?download=true && " \
         "unzip -o elasticsearch_data.zip -x *.DS_Store && " \
         "wget -O processed_data.zip https://huggingface.co/datasets/goldilox/ircot_downloaded_datasets/resolve/main/processed_data.zip?download=true && " \
         "unzip -o processed_data.zip -x *.DS_Store && " \
         "wget -O raw_data.zip https://huggingface.co/datasets/goldilox/ircot_downloaded_datasets/resolve/main/raw_data.zip?download=true && " \
         "unzip -o raw_data.zip -x *.DS_Store && " \
-        # elasticsearch setup
         "wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.0.0-linux-x86_64.tar.gz -q && " \
         "tar -xzf elasticsearch-7.0.0-linux-x86_64.tar.gz && " \
         "useradd -m elasticsearchuser && " \
@@ -61,7 +57,6 @@ def main():
         "sudo -u elasticsearchuser elasticsearch-7.0.0/bin/elasticsearch && " \
         "elasticdump --output=\"http://localhost:9200\" --input=\"elasticsearch_data.json\" --limit=10000 && " \
         "curl localhost:9200/_cat/indices && " \
-        # python basic setup
         "python -m spacy download en_core_web_sm && " \
         "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python HF_TOKEN=$HF_TOKEN H4_TOKEN=$HF_TOKEN " \
         "HF_HUB_DISABLE_PROGRESS_BARS=1 CURL_CA_BUNDLE=\"\" "

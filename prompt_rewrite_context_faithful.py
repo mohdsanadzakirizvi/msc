@@ -5,14 +5,14 @@ def rewrite_entry(entry):
     text_match = re.search(r'# METADATA: .+?\n(.+?)Q:', entry, re.DOTALL)
     text_before_question = text_match.group(1).strip() if text_match else ""
 
-    question_match = re.search(r'Q: (.+?)\n', entry)
+    question_match = re.search(r'Q: (.+?)\nA:', entry, re.DOTALL)
     question_text = question_match.group(1) if question_match else ""
 
     answer_match = re.search(r'\nA: (.+)', entry)
     answer_text = answer_match.group(1) if answer_match else ""
 
     # Constructing the rewritten entry
-    rewritten_entry = f"Bob said, \"{text_before_question}\"\n\nQ: {question_text.rstrip('.')} in Bob’s opinion?\nA: {answer_text}"
+    rewritten_entry = f"Bob said, \"{text_before_question}\"\n\nQ: {question_text.rstrip('?')} in Bob’s opinion?\nA: {answer_text}"
 
     return rewritten_entry
 
@@ -30,7 +30,7 @@ def main(input_file_name):
     rewritten_entries = [rewrite_entry(entry) for entry in entries[1:]]
 
     # Writing the rewritten entries to a new file
-    output_file_name = input_file_name + "_rewritten.txt"
+    output_file_name = input_file_name.split(".")[0] + "_rewritten.txt"
     with open(output_file_name, "w") as file:
         for entry in rewritten_entries:
             file.write(entry + "\n\n")

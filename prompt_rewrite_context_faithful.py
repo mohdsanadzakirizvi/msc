@@ -2,6 +2,10 @@ import sys, re
 
 def rewrite_entry(entry):
     # Extracting the relevant portions
+    metadata_match = re.search(r'(?=(# METADATA: .+))', entry)
+    print(metadata_match.groups())
+    metadata_text = metadata_match.group(1).strip() if metadata_match else "" 
+
     text_match = re.search(r'# METADATA: .+?\n(.+?)Q:', entry, re.DOTALL)
     text_before_question = text_match.group(1).strip() if text_match else ""
 
@@ -12,7 +16,7 @@ def rewrite_entry(entry):
     answer_text = answer_match.group(1) if answer_match else ""
 
     # Constructing the rewritten entry
-    rewritten_entry = f"Bob said, \"{text_before_question}\"\n\nQ: {question_text.rstrip('?')} in Bob’s opinion?\nA: {answer_text}"
+    rewritten_entry = f"{metadata_text}\nBob said, \"{text_before_question}\"\n\nQ: {question_text.rstrip('?')} in Bob’s opinion?\nA: {answer_text}"
 
     return rewritten_entry
 

@@ -3,7 +3,7 @@ import sys, re
 def rewrite_entry(entry):
     # Extracting the relevant portions
     metadata_match = re.search(r'(?=(# METADATA: .+))', entry)
-    print(metadata_match.groups())
+    # print(metadata_match.groups())
     metadata_text = metadata_match.group(1).strip() if metadata_match else "" 
 
     text_match = re.search(r'# METADATA: .+?\n(.+?)Q:', entry, re.DOTALL)
@@ -27,8 +27,8 @@ def main(input_file_name):
 
     # Splitting the entries
     entries = re.split(r'(?=# METADATA: \{"qid": "[\w-]+"\})', entries)
-    print(entries)
-    print(len(entries))
+    # print(entries)
+    # print(len(entries))
 
     # Rewriting the entries
     rewritten_entries = [rewrite_entry(entry) for entry in entries[1:]]
@@ -37,7 +37,7 @@ def main(input_file_name):
     output_file_name = input_file_name.split(".")[0] + "_rewritten.txt"
     with open(output_file_name, "w") as file:
         for entry in rewritten_entries:
-            file.write(entry + "\n\n")
+            file.write(entry + "\n\n\n")
     print(f"Rewritten entries saved to {output_file_name}")
 
 if __name__ == "__main__":

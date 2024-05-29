@@ -38,7 +38,7 @@ def main():
         "npm install elasticdump -g && " \
         "git lfs install && " \
         "pip install -U pip && " \
-        "https://github.com/mohdsanadzakirizvi/ircot.git && " \
+        "git clone https://github.com/mohdsanadzakirizvi/ircot.git && " \
         "cd ircot && " \
         "pip install --root-user-action=ignore -U -r requirements.txt && " \
         "pip install --root-user-action=ignore -U protobuf && " \

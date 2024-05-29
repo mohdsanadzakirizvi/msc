@@ -38,7 +38,7 @@ def main():
         "npm install elasticdump -g && " \
         "git lfs install && " \
         "pip install -U pip && " \
-        "git clone https://github.com/StonyBrookNLP/ircot.git && " \
+        "https://github.com/mohdsanadzakirizvi/ircot.git && " \
         "cd ircot && " \
         "pip install --root-user-action=ignore -U -r requirements.txt && " \
         "pip install --root-user-action=ignore -U protobuf && " \
@@ -55,7 +55,7 @@ def main():
         "useradd -m elasticsearchuser && " \
         "chown -R elasticsearchuser:elasticsearchuser elasticsearch-7.0.0 && " \
         "sudo -u elasticsearchuser elasticsearch-7.0.0/bin/elasticsearch && " \
-        "elasticdump --output=\"http://localhost:9200\" --input=\"elasticsearch_data.json\" --limit=10000 && " \
+        "elasticdump --output=http://localhost:9200 --input=elasticsearch_data.json --limit=100000 && " \
         "curl localhost:9200/_cat/indices && " \
         "python -m spacy download en_core_web_sm && " \
         "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python HF_TOKEN=$HF_TOKEN H4_TOKEN=$HF_TOKEN " \

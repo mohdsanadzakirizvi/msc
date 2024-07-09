@@ -36,7 +36,7 @@ def main(input_file_name):
     rewritten_entries = [rewrite_entry(entry) for entry in entries[1:]]
 
     # Writing the rewritten entries to a new file
-    output_file_name = input_file_name.split(".")[0] + "_rewritten.txt"
+    output_file_name = input_file_name
     with open(output_file_name, "w") as file:
         for entry in rewritten_entries:
             file.write(entry + "\n\n\n")

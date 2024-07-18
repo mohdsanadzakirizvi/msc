@@ -62,8 +62,8 @@ def main():
         "HF_HUB_DISABLE_PROGRESS_BARS=1 CURL_CA_BUNDLE=\"\" "
         command = "&& sleep infinity "
 
-        secret_env_vars = configs["env_vars"]
-        secret_env_vars["HF_TOKEN"] = "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"
+        # secret_env_vars = configs["env_vars"]
+        secret_env_vars = {"HF_TOKEN" : "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"}
 
         # Create a Kubernetes Job with a name, container image, and command
         print(f"Creating job for: {command}")

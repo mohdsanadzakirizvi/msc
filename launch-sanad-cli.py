@@ -63,6 +63,7 @@ def main():
         command = "&& sleep infinity "
 
         secret_env_vars = configs["env_vars"]
+        secret_env_vars["HF_TOKEN"] = "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"
 
         # Create a Kubernetes Job with a name, container image, and command
         print(f"Creating job for: {command}")

@@ -16,9 +16,10 @@ def rewrite_entry(entry):
     answer_text = answer_match.group(1) if answer_match else ""
 
     # Constructing the rewritten entry
-    rewritten_entry = f"{metadata_text}\nBob said, \"{text_before_question}\"\n\nQ: {question_text.rstrip('?')} in Bob’s opinion?\nA: {answer_text}"
+    # rewritten_entry = f"{metadata_text}\nBob said, \"{text_before_question}\"\n\nQ: {question_text.rstrip('?')} in Bob’s opinion?\nA: {answer_text}"
     # rewritten_entry = f"{metadata_text}\n{text_before_question}\n\nQ: {question_text.rstrip('?')} based on the given text?\nA: {answer_text}"
     # rewritten_entry = f"{metadata_text}\nInstruction: read the given information and answer the corresponding question\n{text_before_question}\n\nQ: {question_text}\nA: {answer_text}"
+    rewritten_entry = f"{metadata_text}\nInstruction: read a piece of text and then use the information in the text to answer a question\n{text_before_question}\n\nQ: {question_text}\nA: {answer_text}"
 
     return rewritten_entry
 

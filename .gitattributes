@@ -19,3 +19,5 @@ cad_logs/t5base_ircot_vanilla_cad_alpha0.5.txt filter=lfs diff=lfs merge=lfs -te
 cad_logs/t5base_cad_0.1.txt filter=lfs diff=lfs merge=lfs -text
 cad_logs/t5base_cad_0.txt filter=lfs diff=lfs merge=lfs -text
 cad_logs/t5base_cad_0.8_nosoftmax.txt filter=lfs diff=lfs merge=lfs -text
+cad_logs/t5b_ircotqa_vanilla.txt filter=lfs diff=lfs merge=lfs -text
+cad_logs/t5b_ircotqa_vanilla_crashed.txt filter=lfs diff=lfs merge=lfs -text

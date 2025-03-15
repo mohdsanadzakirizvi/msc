@@ -46,15 +46,15 @@ def main():
         "tar -xzf elasticsearch-7.10.2-linux-x86_64.tar.gz && " \
         "useradd -m elasticsearchuser && " \
         "chown -R elasticsearchuser:elasticsearchuser elasticsearch-7.10.2 && " \
-        "sudo -u elasticsearchuser elasticsearch-7.10.2/bin/elasticsearch & " \
+        "setsid sudo -u elasticsearchuser elasticsearch-7.10.2/bin/elasticsearch && " \
         "sh scripts/download_react_data.sh && " \
-        "uvicorn serve:app --port 8000 --app-dir src/utils/retriever_server & " \
-        "python3 src/utils/retriever_server/build_index.py musique && " \
-        "python3 src/utils/retriever_server/build_index.py hotpotqa && " \
-        "python3 src/utils/retriever_server/build_index.py wikimultihopqa && " \
+        "setsid uvicorn serve:app --port 8000 --app-dir src/utils/retriever_server && " \
+        "python src/utils/retriever_server/build_index.py musique && " \
+        "python src/utils/retriever_server/build_index.py hotpotqa && " \
+        "python src/utils/retriever_server/build_index.py wikimultihopqa && " \
         "curl localhost:9200/_cat/indices && " \
-        "python3 -m spacy download en_core_web_sm && " \
-        "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python3 HF_TOKEN=$HF_TOKEN H4_TOKEN=$HF_TOKEN " \
+        "python -m spacy download en_core_web_sm && " \
+        "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python HF_TOKEN=$HF_TOKEN H4_TOKEN=$HF_TOKEN " \
         "HF_HUB_DISABLE_PROGRESS_BARS=1 CURL_CA_BUNDLE=\"\" "
         command = "&& sleep infinity "
 

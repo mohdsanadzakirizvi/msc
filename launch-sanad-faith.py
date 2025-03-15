@@ -46,9 +46,9 @@ def main():
         "tar -xzf elasticsearch-7.10.2-linux-x86_64.tar.gz && " \
         "useradd -m elasticsearchuser && " \
         "chown -R elasticsearchuser:elasticsearchuser elasticsearch-7.10.2 && " \
-        "sudo -u elasticsearchuser elasticsearch-7.10.2/bin/elasticsearch & && " \
+        "sudo -u elasticsearchuser elasticsearch-7.10.2/bin/elasticsearch & " \
         "sh scripts/download_react_data.sh && " \
-        "uvicorn serve:app --port 8000 --app-dir src/utils/retriever_server & && " \
+        "uvicorn serve:app --port 8000 --app-dir src/utils/retriever_server & " \
         "python src/utils/retriever_server/build_index.py musique && " \
         "python src/utils/retriever_server/build_index.py hotpotqa && " \
         "python src/utils/retriever_server/build_index.py wikimultihopqa && " \

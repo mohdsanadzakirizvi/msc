@@ -1,0 +1,7 @@
+[2025-03-16 13:25:55,865][huggingface_hub._login][WARNING] - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+[2025-03-16 13:26:42,513][accelerate.utils.modeling][INFO] - We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+[2025-03-16 13:26:53,122][elasticsearch][INFO] - POST http://localhost:9200/musique/_search [status:200 request:0.035s]
+[2025-03-16 13:26:56,742][elasticsearch][INFO] - POST http://localhost:9200/musique/_search [status:200 request:0.035s]
+[2025-03-16 13:27:02,555][elasticsearch][INFO] - POST http://localhost:9200/musique/_search [status:200 request:0.035s]
+[2025-03-16 13:27:09,084][elasticsearch][INFO] - POST http://localhost:9200/musique/_search [status:200 request:0.028s]
+[2025-03-16 13:27:14,865][elasticsearch][INFO] - POST http://localhost:9200/musique/_search [status:200 request:0.003s]

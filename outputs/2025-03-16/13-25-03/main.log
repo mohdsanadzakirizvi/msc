@@ -1,0 +1,14 @@
+[2025-03-16 13:25:04,047][huggingface_hub._login][WARNING] - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+[2025-03-16 13:25:50,955][accelerate.utils.modeling][INFO] - We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+[2025-03-16 13:26:42,775][elasticsearch][INFO] - POST http://localhost:9200/musique/_search [status:200 request:0.036s]
+[2025-03-16 13:26:46,566][elasticsearch][INFO] - POST http://localhost:9200/musique/_search [status:200 request:0.034s]
+[2025-03-16 13:26:50,954][elasticsearch][INFO] - POST http://localhost:9200/musique/_search [status:200 request:0.037s]
+[2025-03-16 13:26:54,355][elasticsearch][INFO] - POST http://localhost:9200/musique/_search [status:200 request:0.034s]
+[2025-03-16 13:26:57,625][elasticsearch][INFO] - POST http://localhost:9200/musique/_search [status:200 request:0.032s]
+[2025-03-16 13:27:01,083][elasticsearch][INFO] - POST http://localhost:9200/musique/_search [status:200 request:0.003s]
+[2025-03-16 13:27:05,433][elasticsearch][INFO] - POST http://localhost:9200/musique/_search [status:200 request:0.029s]
+[2025-03-16 13:27:11,135][elasticsearch][INFO] - POST http://localhost:9200/musique/_search [status:200 request:0.032s]
+[2025-03-16 13:27:17,830][elasticsearch][INFO] - POST http://localhost:9200/musique/_search [status:200 request:0.031s]
+[2025-03-16 13:27:24,663][elasticsearch][INFO] - POST http://localhost:9200/musique/_search [status:200 request:0.029s]
+[2025-03-16 13:27:35,821][elasticsearch][INFO] - POST http://localhost:9200/musique/_search [status:200 request:0.035s]
+[2025-03-16 13:27:37,164][elasticsearch][INFO] - POST http://localhost:9200/musique/_search [status:200 request:0.029s]

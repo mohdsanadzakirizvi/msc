@@ -1,0 +1,6 @@
+[2025-03-21 04:15:31,248][huggingface_hub._login][WARNING] - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+[2025-03-21 04:15:31,366][huggingface_hub._login][WARNING] - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+[2025-03-21 04:16:55,305][accelerate.utils.modeling][INFO] - We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+[2025-03-21 04:16:55,359][accelerate.utils.modeling][INFO] - We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+[2025-03-21 04:17:02,795][wandb.sdk.mailbox.mailbox][INFO] - Closing mailbox, abandoning 0 handles.
+[2025-03-21 04:17:02,801][wandb.sdk.mailbox.mailbox][INFO] - Closing mailbox, abandoning 0 handles.
